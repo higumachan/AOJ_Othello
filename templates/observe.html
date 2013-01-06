@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="/static/css/cube.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		id = {{id}};
+		user_to_plane = {};
+		{%for user in game.users%}
+			user_to_plane["{{user}}"] = "dir" + {{loop.index}};
+		{%endfor%}
+	</script>
+	<script src="/static/js/main.js" type="text/javascript"></script>
+</head>
+<body>
+	<table class="main" border="1">
+		{%for i in range(5)%}
+		<tr>
+			{%for j in range(5)%}
+				<td onclick="click({{j}}, {{i}})" id="board_{{j}}_{{i}}">
+					<div class="cube">
+						<div class="plane-front"></div>
+						<div class="plane-back"></div>
+						<div class="plane-right">{{game.users[3]}}</div>
+						<div class="plane-left">{{game.users[2]}}</div>
+						<div class="plane-top">{{game.users[1]}}</div>
+						<div class="plane-bottom">{{game.users[0]}}</div>
+					</div>
+				</td>
+			{%endfor%}
+		</tr>
+		{%endfor%}
+	</table>
+	<ul>
+		{%for user in game.users%}
+			<li>{{user}}</li>
+		{%endfor%}
+	</ul>
+</body>
+</html>

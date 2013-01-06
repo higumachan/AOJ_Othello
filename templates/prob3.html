@@ -1,0 +1,172 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="Content-Style-Type" content="text/css">
+<title>JOI 2012-2013 予選 問題３</title>
+</head>
+<body>
+
+<table border="0" cellspacing="5">
+ <tr>
+  <td><img src="../images/JOIlogo_color_100.png" alt="JOI logo" width="100" height="100"></td>
+  <td width="50"></td>
+  <td>
+   <table border="0" align="center">
+    <tr>
+     <td width="600" height="30" align="center" 
+      style="color:#ffffff; background-color:#00ffee; 
+             font-size:x-large; font-weight:bold;">
+	            第12回日本情報オリンピック　予選模擬３
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<p align="right">
+2012年12月12日<br>
+ICT委員会
+</p>
+
+<!-- JOI-TASK-START --> 
+
+<table>
+ <tr>
+  <td>
+   <table border="0" cellpadding=2>
+    <tr>
+     <th width="80" height="70" align="center" 
+      style="font-size:large; 
+	     border-style:solid;
+	     border-color:black;">
+      問題<br>３
+     </th>
+     <th style="font-size:large;">
+       　　　家庭菜園2 (Garden2)
+     </th>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  問題</h2>
+
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+ミズゴロウのゴロウくんは、家庭菜園に野菜を植えることにした. しかし, 庭には N 本の雑草があり, 見栄えが悪いので, すべての雑草の長さをそろえてから野菜を植えることにした.
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+それぞれの雑草は,  1 分ごとに 1 cmずつ伸びる. (具体的には, ある雑草が Ai cmであるとき, 1 分後には Ai + 1 cmになっている.)
+ゴロウくんは, 雑草が 1 cm伸びた後に (すなわち 1 分ごとに), 生えている雑草のうち 1 つを切ることができる. 具体的には, ある雑草が 1 cm伸びたあとに Bi cmになったとすると, その雑草の長さを 1 cm以上 Bi cm未満の整数にすることができる. ただし, ゴロウくんが雑草を切るのには時間がかからないものとする.
+この操作を繰り返し, 全ての雑草を同じ長さにしたい. また, できるだけ切る雑草の長さの総和を小さくしたい.
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力として, 雑草の本数 N と最初の時点での雑草の長さ Ai が与えられたときに, 全ての雑草の長さをそろえるために切る雑草の長さの総和の最小値と, 切る雑草の長さの総和を最小にするように切るときにかかる時間(分)を出力するプログラムを作成せよ.
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力は N + 1 行からなる.<br />
+1 行目には, 正の整数 N ( 1 ≦ N ≦ 100 ) が書かれている.<br />
+1 + i 行目には, 雑草の長さを表す正の整数 Ai ( 1 ≦ Ai ≦ 10000 ) が書かれている.
+
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  出力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+全ての雑草の長さをそろえるために切る雑草の長さの総和の最小値と, 切る雑草の長さの総和を最小にするように切るときにかかる時間(分)を, 空白区切りでこの順に出力せよ.
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入出力例</h2>
+<table style="margin-left: 50px; margin-right: 50px;">
+ <tr>
+  <th width="150" align="left"><a href="./2013-yo-t3-in_s1.txt" target="_blank">入力例 1</a></th>
+  <th width="150" align="left"><a href="./2013-yo-t3-in_s2.txt" target="_blank">入力例 2</a></th>  
+ </tr>
+ <tr>
+ <td>
+  <pre>
+2
+8
+3
+
+
+  </pre>
+ </td>
+ <td>
+  <pre>
+4
+1
+3
+1
+2
+  </pre>
+  </td>
+ </tr>
+ <tr>
+   <th width="150" align="left"><a href="./2013-yo-t3-out_s1.txt" target="_blank">出力例 1</a></th>
+   <th width="150" align="left"><a href="./2013-yo-t3-out_s2.txt" target="_blank">出力例 2</a></th>
+ </tr>
+ <tr>
+  <td>
+   <pre>
+5 1
+   </pre>
+  </td>
+  <td>
+   <pre>
+3 2
+   </pre>
+  </td>
+ </tr>
+</table>
+
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入出力例 1 では, 1 分後に雑草の長さがそれぞれ 9 cm, 4 cmになる. 9 cmの雑草を 5 cm切ることにより, すべての雑草を 4 cmにそろえることができ, 切る長さの最小値を達成できる.
+ゆえに, 切った長さの総和の最小値である 5 (cm)と, かかった時間 1 (分)をこの順に出力する.
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+※各入出力例のデータは，右クリック等によりファイルに保存して利用可能です．
+</p>
+
+<!-- JOI-TASK-END -->
+
+<!-- 作業時確認用データリスト開始  -->
+<hr>
+
+<h3>採点用データ</h3>
+
+<div align="center">
+<table border="2" summary="予選：採点用データ">
+ <tr>
+  <th colspan="5"> 入力データ </th>
+  <td width="70" align="center"><a href="./2013-yo-t3-in1.txt">入力1</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t3-in2.txt">入力2</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t3-in3.txt">入力3</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t3-in4.txt">入力4</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t3-in5.txt">入力5</a></td>
+ </tr>
+</table>
+</div>
+
+<!-- 作業時確認用データリスト終了  -->
+
+</body>
+</html>

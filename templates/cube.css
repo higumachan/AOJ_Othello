@@ -1,0 +1,21 @@
+
+.{{game.users[0]}} {
+    -webkit-animation: rolling 2s ;
+	-webkit-animation-fill-mode: forwards 
+}
+
+.{{game.users[1]}} {
+    -webkit-animation: inv_rolling 2s ;
+	animation-fill-mode: forwards 
+}
+
+.{{game.users[2]}} {
+    -webkit-animation: pitching 2s ;
+	-webkit-animation-fill-mode: forwards 
+}
+
+.{{game.users[3]}} {
+    -webkit-animation: inv_pitching 2s ;
+	-webkit-animation-fill-mode: forwards 
+}
+

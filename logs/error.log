@@ -1,0 +1,14 @@
+2012-12-08 00:30:47,173 ERROR: Exception on / [GET] [in /Library/Python/2.7/site-packages/flask/app.py:1210]
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1504, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1264, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1260, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Library/Python/2.7/site-packages/flask/app.py", line 1387, in preprocess_request
+    rv = func()
+  File "app.py", line 25, in before_request
+    g.db = conn[DB_NAME];
+NameError: global name 'conn' is not defined
+

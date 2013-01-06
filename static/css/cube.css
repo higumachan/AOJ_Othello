@@ -1,0 +1,88 @@
+.main {
+    width: 600px;
+    height: 600px;
+    padding: 20px;
+    display: -webkit-box;
+    /* 3D設定 */
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 1200;
+    /* 少し上から見下ろす感じ  */
+    -webkit-transform: rotateX(-15deg);
+}
+
+.cube {
+    /*margin: 10px;*/
+    width: 100px;
+    height: 100px;
+    
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: translateZ( 0px );
+}
+
+.dir1 {
+    -webkit-animation: rolling 2s ;
+	-webkit-animation-fill-mode: forwards ;
+}
+
+.dir2 {
+    -webkit-animation: inv_rolling 2s ;
+	-webkit-animation-fill-mode: forwards ;
+}
+
+.dir3 {
+    -webkit-animation: pitching 2s ;
+	-webkit-animation-fill-mode: forwards ;
+}
+
+.dir4 {
+    -webkit-animation: inv_pitching 2s ;
+	-webkit-animation-fill-mode: forwards ;
+}
+
+@-webkit-keyframes rolling {
+      0% { -webkit-transform: translateZ(0px) rotateX(0deg); }
+    100% { -webkit-transform: translateZ(0px) rotateX(90deg); }
+}
+
+@-webkit-keyframes inv_rolling {
+      0% { -webkit-transform: translateZ(0px) rotateX(0deg); }
+    100% { -webkit-transform: translateZ(0px) rotateX(-90deg); }
+}
+
+
+@-webkit-keyframes pitching {
+      0% { -webkit-transform: translateZ(0px) rotateY(0deg); }
+    100% { -webkit-transform: translateZ(0px) rotateY(90deg); }
+}
+
+@-webkit-keyframes inv_pitching {
+      0% { -webkit-transform: translateZ(0px) rotateY(0deg); }
+    100% { -webkit-transform: translateZ(0px) rotateY(-90deg); }
+}
+
+.cube [class|=plane] {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+    
+    font-size: 16px;
+    text-align: center;
+    line-height: 100px;
+	color: #fff;
+}
+
+.cube .plane-front  { background-color: hsla(  0, 100%, 50%, 0.8); }
+.cube .plane-back   { background-color: hsla( 60, 100%, 50%, 0.8); }
+.cube .plane-right  { background-color: hsla(120, 100%, 50%, 0.8); }
+.cube .plane-left   { background-color: hsla(180, 100%, 50%, 0.8); }
+.cube .plane-top    { background-color: hsla(240, 100%, 50%, 0.8); }
+.cube .plane-bottom { background-color: hsla(300, 100%, 50%, 0.8); }
+
+.cube .plane-front    { -webkit-transform: translateZ(50px); }
+.cube .plane-back     { -webkit-transform: rotateX(-180deg) translateZ(50px); }
+.cube .plane-right    { -webkit-transform: rotateY(  90deg) translateZ(50px); }
+.cube .plane-left     { -webkit-transform: rotateY( -90deg) translateZ(50px); }
+.cube .plane-top      { -webkit-transform: rotateX(  90deg) translateZ(50px); }
+.cube .plane-bottom   { -webkit-transform: rotateX( -90deg) translateZ(50px); }
+

@@ -1,0 +1,241 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="Content-Style-Type" content="text/css">
+<title>JOI 2012-2013 予選 問題６</title>
+</head>
+<body>
+
+<table border="0" cellspacing="5">
+ <tr>
+  <td><img src="../images/JOIlogo_color_100.png" alt="JOI logo" width="100" height="100"></td>
+  <td width="50"></td>
+  <td>
+   <table border="0" align="center">
+    <tr>
+     <td width="600" height="30" align="center" 
+      style="color:#ffffff; background-color:#00ffee; 
+             font-size:x-large; font-weight:bold;">
+	            第12回日本情報オリンピック　予選模擬６
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<p align="right">
+2012年12月12日<br>
+ICT委員会
+</p>
+
+<!-- JOI-TASK-START --> 
+
+<table>
+ <tr>
+  <td>
+   <table border="0" cellpadding=2>
+    <tr>
+     <th width="80" height="70" align="center" 
+      style="font-size:large; 
+	     border-style:solid;
+	     border-color:black;">
+      問題<br>６
+     </th>
+     <th style="font-size:large;">
+       　　　シャッフル2012 (Shuffle2012)
+     </th>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  問題</h2>
+
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+JOI君は, 1 から N までの数が, 1 枚に 1 つ書かれている N 枚のカードをシャッフルして遊んでいる. ここで, N は偶数である.
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+JOI君は、次の 3 種類のいずれかの方法でシャッフルする :
+
+<ol>
+<li style="padding : 0.5em;"> 1 枚目から N / 2 枚目までのカード列をそれぞれ A<sub>1</sub>, A<sub>2</sub>, … , A<sub>N/2</sub>, N / 2 + 1 枚目から N 枚目までのカード列を B<sub>1</sub>, B<sub>2</sub>, …, B<sub>N/2</sub> とする.<br />
+このとき, 新しいカード列を B<sub>1</sub>, A<sub>1</sub>, B<sub>2</sub>, A<sub>2</sub>, …, B<sub>N/2</sub>, A<sub>N/2</sub> とする. これをシャッフル 1 とする.<br />
+<li style="padding : 0.5em;"> 今あるカード列を逆順にする. すなわち, 今までのカード列を A<sub>1</sub>, A<sub>2</sub>, …, A<sub>N</sub> とすると, これを A<sub>N</sub>, A<sub>N-1</sub>, …, A<sub>2</sub>, A<sub>1</sub> とする. これをシャッフル 2 とする.<br />
+<li style="padding : 0.5em;"> ある整数 K (1 ≦ K ＜ N)について, 1 枚目から K 枚目までのカードを A<sub>1</sub>, A<sub>2</sub>, …, A<sub>K</sub> とし, K + 1 枚目から N 枚目までのカードを B<sub>1</sub>, B<sub>2</sub>, …, B<sub>N - K</sub> とする.<br />
+このとき, 新しいカード列を B<sub>1</sub>, B<sub>2</sub>, …, B<sub>N-K</sub>, A<sub>1</sub>, A<sub>2</sub>, …, A<sub>K</sub> とする. これをシャッフル 3 とする.
+</ol>
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+JOI君は,  最初に 1 から昇順にカード列を並べ,  M 個のシャッフルを 1 セットとして繰り返す. このとき, JOI君はこのカード列を何セット分シャッフルすると昇順に戻るか気になった.
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力として N, M と M 個からなるシャッフルのセット Ci の情報が与えられるとき, JOI君が元のカード列を得るために, 繰り返さないといけないセットの最小回数を出力せよ.
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力は M + 1 行からなる. <br />
+1 行目には 2 つの整数 N, M ( 1 ≦ N ≦ 10000, 1 ≦ M ≦ 1000 ) が空白を区切りとして書かれている. N は偶数である.<br />
+1 + i 行目には, 整数 Ci ( 1 ≦ Ci ≦ 3 ) が書かれている.<br />
+整数 Ci が 1 か 2 であるとき, これはそれぞれシャッフル 1 またはシャッフル 2 を表す.<br />
+整数 Ci が 3 であるとき, 空白区切りで整数 Ki が書かれる. これは, 数 Ki でシャッフル 3 を行うことを表す.
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  出力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+1 行に, JOI君が元のカード列を得るために, 繰り返さないと行けないセットの最小回数を出力せよ.<br />
+ここで, シャッフルを続ければ必ず元のカード列に戻ることが保証されている.<br />
+また, 入力の 40 %分では, 答えが 2<sup>31</sup> - 1 を超えない. また, すべての入力について, 答えは 2<sup>63</sup> - 1 を超えない.
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入出力例</h2>
+<table style="margin-left: 50px; margin-right: 50px;">
+ <tr>
+  <th width="150" align="left"><a href="./2013-yo-t6-in_s1.txt" target="_blank">入力例 1</a></th>
+  <th width="150" align="left"><a href="./2013-yo-t6-in_s2.txt" target="_blank">入力例 2</a></th>
+  <th width="150" align="left"><a href="./2013-yo-t6-in_s3.txt" target="_blank">入力例 3</a></th>
+  <th width="150" align="left"><a href="./2013-yo-t6-in_s4.txt" target="_blank">入力例 4</a></th>
+ </tr>
+ <tr>
+ <td>
+  <pre>
+4 2
+1
+3 2
+
+  </pre>
+ </td>
+ <td>
+  <pre>
+10 3
+2
+2
+3 8
+  </pre>
+  </td>
+ <td>
+  <pre>
+18 2
+1
+3 4
+
+  </pre>
+ </td>
+ <td>
+  <pre>
+92 3
+3 27
+1
+2
+  </pre>
+  </td>
+ </tr>
+ <tr>
+   <th width="150" align="left"><a href="./2013-yo-t6-out_s1.txt" target="_blank">出力例 1</a></th>
+   <th width="150" align="left"><a href="./2013-yo-t6-out_s2.txt" target="_blank">出力例 2</a></th>
+   <th width="150" align="left"><a href="./2013-yo-t6-out_s3.txt" target="_blank">出力例 3</a></th>
+   <th width="150" align="left"><a href="./2013-yo-t6-out_s4.txt" target="_blank">出力例 4</a></th>
+ </tr>
+ <tr>
+  <td>
+   <pre>
+2
+   </pre>
+  </td>
+  <td>
+   <pre>
+5
+   </pre>
+  </td>
+  <td>
+   <pre>
+24
+   </pre>
+  </td>
+  <td>
+   <pre>
+19404
+   </pre>
+  </td>
+ </tr>
+</table>
+
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入出力例 1 では, 次のように 2 回のセットで元のカード列に戻る.<br />
+<pre style="margin-left: 30px; margin-right: 30px;">
+(0) 1 2 3 4 [初期状態]
+(1) 3 1 4 2 [シャッフル 1]
+    4 2 3 1 [K = 2でシャッフル 3]
+(2) 3 4 1 2 [シャッフル 1]
+    1 2 3 4 [K = 2でシャッフル 3]
+</pre>
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入出力例 2 では, 次のように 5 回のセットで元のカード列に戻る. セット 1 の途中で元の並びに戻っているが, ちょうどセットが終わるときに元に戻っていなければならないことに注意せよ.
+<pre style="margin-left: 30px; margin-right: 30px;">
+(0) 1 2 3 4 5 6 7 8 9 10 [初期状態]
+(1) 10 9 8 7 6 5 4 3 2 1 [シャッフル 2]
+    1 2 3 4 5 6 7 8 9 10 [シャッフル 2]
+    9 10 1 2 3 4 5 6 7 8 [K = 8でシャッフル 3]
+(2) 8 7 6 5 4 3 2 1 10 9 [シャッフル 2]
+    9 10 1 2 3 4 5 6 7 8 [シャッフル 2]
+    7 8 9 10 1 2 3 4 5 6 [K = 8でシャッフル 3]
+(3) 6 5 4 3 2 1 10 9 8 7 [シャッフル 2]
+    7 8 9 10 1 2 3 4 5 6 [シャッフル 2]
+    5 6 7 8 9 10 1 2 3 4 [K = 8でシャッフル 3]
+(4) 4 3 2 1 10 9 8 7 6 5 [シャッフル 2]
+    5 6 7 8 9 10 1 2 3 4 [シャッフル 2]
+    3 4 5 6 7 8 9 10 1 2 [K = 8でシャッフル 3]
+(5) 2 1 10 9 8 7 6 5 4 3 [シャッフル 2]
+    3 4 5 6 7 8 9 10 1 2 [シャッフル 2]
+    1 2 3 4 5 6 7 8 9 10 [K = 8でシャッフル 3]
+</pre>
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+※各入出力例のデータは，右クリック等によりファイルに保存して利用可能です．
+</p>
+
+<!-- JOI-TASK-END -->
+
+<!-- 作業時確認用データリスト開始  -->
+<hr>
+
+<h3>採点用データ</h3>
+
+<div align="center">
+<table border="2" summary="予選：採点用データ">
+ <tr>
+  <th colspan="5"> 入力データ </th>
+  <td width="70" align="center"><a href="./2013-yo-t6-in1.txt">入力1</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t6-in2.txt">入力2</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t6-in3.txt">入力3</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t6-in4.txt">入力4</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t6-in5.txt">入力5</a></td>
+ </tr>
+</table>
+</div>
+
+<!-- 作業時確認用データリスト終了  -->
+
+</body>
+</html>

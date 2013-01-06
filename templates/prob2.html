@@ -1,0 +1,180 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="Content-Style-Type" content="text/css">
+<title>JOI 2012-2013 予選 問題２</title>
+</head>
+<body>
+
+<table border="0" cellspacing="5">
+ <tr>
+  <td><img src="../images/JOIlogo_color_100.png" alt="JOI logo" width="100" height="100"></td>
+  <td width="50"></td>
+  <td>
+   <table border="0" align="center">
+    <tr>
+     <td width="600" height="30" align="center" 
+      style="color:#ffffff; background-color:#00ffee; 
+             font-size:x-large; font-weight:bold;">
+	            第12回日本情報オリンピック　予選模擬２
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<p align="right">
+2012年12月12日<br>
+ICT委員会
+</p>
+
+<!-- JOI-TASK-START --> 
+
+<table>
+ <tr>
+  <td>
+   <table border="0" cellpadding=2>
+    <tr>
+     <th width="80" height="70" align="center" 
+      style="font-size:large; 
+	     border-style:solid;
+	     border-color:black;">
+      問題<br>２
+     </th>
+     <th style="font-size:large;">
+       　　　採点 (Grading)
+     </th>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  問題</h2>
+
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+JOI小学校の M 先生は, N 人の生徒の算数のテストの採点をしている.
+JOI小学校の算数のテストでは, それぞれの生徒の理解度にあわせて, 1 人に K 問の異なる式の加減算の問題が出題される.
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+M 先生は忙しくて中々採点に時間をさけない. M 先生の代わりに, それぞれの生徒が K 問のうちいくつの問題を正解しているかを出力するプログラムを作成せよ.
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力は N × K + 1 行からなる.<br />
+1 行目には, N ( 1 ≦ N ≦ 50 ) と K ( 1 ≦ K ≦ 20 ) が空白区切りで与えられる.<br />
+(i - 1) × K + j + 1 行目には, i 番目の生徒の j 番目の問題とその解答が書かれている.<br />
+それぞれの問題は, 2 個以上 20 個以下の数字と, それらの数の間に + か - の演算子が入り構成される.<br />
+問題に登場する数字は 0 以上 100 以下であることが保証されている.<br />
+問題の後ろには, 等号 ( = ) と生徒の書いた答えがそれぞれ空白区切りで与えられる.<br />
+生徒の書いた答えは -2000 以上 2000 以下になることが保証されている.
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  出力</h2>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+ i ( 1 ≦ i ≦ N ) 行目に, i 番目の生徒が正解した問題の数を出力せよ.
+</p>
+
+<h2 style="background-color:silver; border-style:groove; 
+	   margin-left:20px; margin-right:20px; padding:2pt; padding-left:20px;">
+  入出力例</h2>
+<table style="margin-left: 50px; margin-right: 50px;">
+ <tr>
+  <th width="300" align="left"><a href="./2013-yo-t2-in_s1.txt" target="_blank">入力例 1</a></th>
+  <th width="150" align="left"><a href="./2013-yo-t2-in_s2.txt" target="_blank">入力例 2</a></th>  
+ </tr>
+ <tr>
+ <td>
+  <pre>
+2 3
+1 + 2 = 3
+3 + 2 - 1 = 5
+2 + 2 - 2 = 2
+98 + 2 = 101
+20 + 19 - 18 + 4 = 25
+20 + 20 + 20 + 20 + 20 + 20 = 120
+  </pre>
+ </td>
+ <td>
+  <pre>
+1 5
+8 - 1 = 7
+9 - 10 = -6
+75 + 2 = 77
+94 - 95 = -1
+8 - 7 - 6 + 5 + 4 = 4
+
+  </pre>
+  </td>
+ </tr>
+ <tr>
+   <th width="300" align="left"><a href="./2013-yo-t2-out_s1.txt" target="_blank">出力例 1</a></th>
+   <th width="150" align="left"><a href="./2013-yo-t2-out_s2.txt" target="_blank">出力例 2</a></th>
+ </tr>
+ <tr>
+  <td>
+   <pre>
+2
+2
+   </pre>
+  </td>
+  <td>
+   <pre>
+4
+
+   </pre>
+  </td>
+ </tr>
+</table>
+
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力例 1 では, 生徒 1 は "1 + 2" , "2 + 2 - 2" という問題に正解しているが, "3 + 2 - 1" という問題を間違っている.
+したがって,  3 問中 2 問を正解しているので 2 を出力する. 生徒 2 も 2 問正解しているので, 同様に 2 を出力する.
+</p>
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+入力例 2 において, 問題 "9 - 10" や "94 - 95" で計算結果が負になっている.
+このように, 計算結果が負になる可能性があることにも注意せよ.
+</p>
+
+<p style="line-height: 200%;  margin-left: 30px; margin-right: 30px;">
+※各入出力例のデータは，右クリック等によりファイルに保存して利用可能です．
+</p>
+
+<!-- JOI-TASK-END -->
+
+<!-- 作業時確認用データリスト開始  -->
+<hr>
+
+<h3>採点用データ</h3>
+
+<div align="center">
+<table border="2" summary="予選：採点用データ">
+ <tr>
+  <th colspan="5"> 入力データ </th>
+  <td width="70" align="center"><a href="./2013-yo-t2-in1.txt">入力1</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t2-in2.txt">入力2</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t2-in3.txt">入力3</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t2-in4.txt">入力4</a></td>
+  <td width="70" align="center"><a href="./2013-yo-t2-in5.txt">入力5</a></td>
+ </tr>
+</table>
+</div>
+
+<!-- 作業時確認用データリスト終了  -->
+
+</body>
+</html>

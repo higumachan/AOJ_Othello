@@ -1,0 +1,8 @@
+<div>
+	<div class="plane-front"></div>
+	<div class="plane-back"></div>
+	<div class="plane-right"></div>
+	<div class="plane-left"></div>
+	<div class="plane-top"></div>
+	<div class="plane-bottom"></div>
+</div>

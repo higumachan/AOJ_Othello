@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title></title>
+	<script src="{{url_for('static', filename='js/jquery.js')}}" type="text/javascript"></script>
+	<script type="text/javascript">
+		poll = function (id) {
+			$.post("/poll/" + id, {}, function(res) {
+				console.log(res);
+				if (res == "OK"){
+					temp = parseInt($("#poll_count_" + id).text())
+					$("#poll_count_" + id).text(temp + 1);
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<table>
+		{%for presentation in presentations%}
+		<tr>
+			<td>{{presentation.name}}</td>
+
+			<td>
+				<input type="button" value="投票おねがいしま〜す" onclick="poll({{presentation._id}})"/>
+			</td>
+			<td>
+				<span id="poll_count_{{presentation._id}}">{{presentation.poll_count}}</span> / {{presentation.bias}}
+			</td>
+			<td>
+				{%if presentation.can_open%}
+					決行
+				{%else%}
+					未決行
+				{%endif%}
+			</td>
+		</tr>
+		{%endfor%}
+	</table>
+</body>
+</html>
