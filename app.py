@@ -125,13 +125,17 @@ def game_state(id):
     for y in range(1, BOARD_SIZE - 1):
         for x in range(1, BOARD_SIZE - 1):
             if (board[y][x] != ""):
-                for dy in range(-1, 2):
-                    for dx in range(-1, 2):
-                        can_open.append({
-                            "x": (x + dx),
-                            "y": (y + dy),
-                            "id": game["problems_board"][y + dy][x + dx],
-                        });
+                for d in range(-1, 2):
+                    can_open.append({
+                        "x": (x + d),
+                        "y": (y),
+                        "id": game["problems_board"][y][x + d],
+                    });
+                    can_open.append({
+                        "x": (x),
+                        "y": (y + d),
+                        "id": game["problems_board"][y + d][x],
+                    });
     can_open = unique(can_open, 
         lambda a, b: int(a["id"]) - int(b["id"]), lambda a, b: a["id"] == b["id"]);
 
