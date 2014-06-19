@@ -103,13 +103,13 @@ def buttle_game(id, user):
     game = g.db.game_info.find_one({"_id": id});
     if (not user["username"] in game["users"]):
         return "Not Entry User"
-    return render_template("observe.html", id=id, game=game, user=user);
+    return render_template("simple_observe.html", id=id, game=game, user=user);
 
 @app.route("/game/observe/<int:id>")
 @require_login
 def observe_game(id, user):
     game = g.db.game_info.find_one({"_id": id});
-    return render_template("observe.html", id=id, game=game);
+    return render_template("simple_observe.html", id=id, game=game);
 
 @app.route("/game/json/state/<int:id>")
 def game_state(id):

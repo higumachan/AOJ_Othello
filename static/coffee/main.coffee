@@ -12,10 +12,9 @@ update_board = ->
 			console.log("#board_#{x}_#{y}");
 			if board[y][x] != ""
 				console.log(board[y][x]);
-				for i in [1..4]
-					$("#board_#{x}_#{y}>div").removeClass("dir" + i);
-				$("#board_#{x}_#{y}>div").addClass(user_to_plane[board[y][x]]);
-			$("#board_#{x}_#{y}>div>.plane-front").html("<a target='_blank' href='http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=#{o.id}&lang=jp'>#{o.id}</a>");
+				$("#board_#{x}_#{y}").text(board[y][x]);
+			else
+				$("#board_#{x}_#{y}").html("<a target='_blank' href='http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=#{o.id}&lang=jp'>#{o.id}</a>");
 			ids[y * BOARD_SIZE + x] = "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=#{o.id}&lang=jp"
 	);
 
